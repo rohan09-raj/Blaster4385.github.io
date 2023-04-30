@@ -1,7 +1,7 @@
 .card {
     background-color: #fcf7e9;
     border: 4px solid #333;
-    box-shadow: 5px 10px 8px black;
+    box-shadow: 5px 10px 0px black;
     position: absolute;
     top: 205px;
     left: 500px;
@@ -10,7 +10,7 @@
     padding: 20px;
     z-index: 1;
     visibility: hidden;
-    transition: visibility 0.5s ease-in-out, transform 0.5s ease-in-out, all 0.5s ;
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out, all 0.3s ;
     transform: scale(0);
 }
 

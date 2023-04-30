@@ -8,11 +8,11 @@
 .card {
   background-color: #fcf7e9;
   border: 4px solid #333;
-  box-shadow: 5px 10px 8px black;
+  box-shadow: 5px 10px 0px black;
   display: flex;
   flex-direction: column;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out, all 0.3s ;
   transform: scale(0.5);
 }
 
@@ -46,7 +46,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 10px;
+  margin: 0px 10px;
   background: none;
   border: none;
   color: #333;
