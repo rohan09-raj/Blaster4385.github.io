@@ -9,8 +9,8 @@ const ContactCard = ({ open, setOpen }) => {
             <div className={maximise ? open ? `${styles.card} ${styles.card__open} ${styles.card__maximise}` : `${styles.card} ${styles.card__maximise}` : open ? `${styles.card} ${styles.card__open}` :styles.card}>
                 <button className={styles.card__close__button} onClick={() => setOpen(!open)}>&times;</button>
                 <button className={styles.card__maximise__button} onClick={() => setMaximise(!maximise)}>&#x2610;</button>
-                <div className={styles.card__title}>
-                    <h1>Contact Me</h1>
+                <div>
+                    <h1 className={styles.card__title}>Contact Me</h1>
                 </div>
                 <div className={styles.card__content}>
                     <p>You can contact me on:</p>
