@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './ProjectsCard.module.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Context } from '../../constants'
 
 const ProjectsCard = ({ open, setOpen }) => {
     const [maximise, setMaximise] = useState(false)
+    const {openArray, setOpenArray} = useContext(Context)
 
     const data = [
         {
@@ -29,8 +31,11 @@ const ProjectsCard = ({ open, setOpen }) => {
     ]
 
     return (
-        <div className={maximise ? open ? `${styles.card} ${styles.card__open} ${styles.card__maximise}` : `${styles.card} ${styles.card__maximise}` : open ? `${styles.card} ${styles.card__open}` : styles.card}>
-            <button className={styles.card__close__button} onClick={() => setOpen(!open)}>&times;</button>
+        <div className={maximise ? openArray.Projects ? `${styles.card} ${styles.card__open} ${styles.card__maximise}` : `${styles.card} ${styles.card__maximise}` : openArray.Projects ? `${styles.card} ${styles.card__open}` : styles.card}>
+            <button className={styles.card__close__button} onClick={() => setOpenArray({
+                    ...openArray,
+                    Projects: !openArray.Projects
+                })}>&times;</button>
             <button className={styles.card__maximise__button} onClick={() => setMaximise(!maximise)}>&#x2610;</button>
             <div>
                 <h1 className={styles.card__title}>Projects</h1>

@@ -1,13 +1,18 @@
 import React from 'react'
 import styles from './ContactCard.module.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Context } from '../../constants'
 
 const ContactCard = ({ open, setOpen }) => {
     const [maximise, setMaximise] = useState(false)
+    const {openArray, setOpenArray} = useContext(Context)
     
     return (
-            <div className={maximise ? open ? `${styles.card} ${styles.card__open} ${styles.card__maximise}` : `${styles.card} ${styles.card__maximise}` : open ? `${styles.card} ${styles.card__open}` :styles.card}>
-                <button className={styles.card__close__button} onClick={() => setOpen(!open)}>&times;</button>
+            <div className={maximise ? openArray.Contact ? `${styles.card} ${styles.card__open} ${styles.card__maximise}` : `${styles.card} ${styles.card__maximise}` : openArray.Contact ? `${styles.card} ${styles.card__open}` :styles.card}>
+                <button className={styles.card__close__button} onClick={() => setOpenArray({
+                    ...openArray,
+                    Contact: !openArray.Contact
+                })}>&times;</button>
                 <button className={styles.card__maximise__button} onClick={() => setMaximise(!maximise)}>&#x2610;</button>
                 <div>
                     <h1 className={styles.card__title}>Contact Me</h1>
