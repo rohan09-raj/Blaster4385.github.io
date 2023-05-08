@@ -46,8 +46,8 @@ const Splash = () => {
         "Starting firewall...",
         "Starting graphical interface...",
         "Welcome to Blaster4385's website!",
-      ];
-      
+    ];
+
 
     useEffect(() => {
         const textArea = myRef.current
@@ -62,7 +62,7 @@ const Splash = () => {
                     else {
                         textArea.append('\n')
                         if (bootSequence[index1] != undefined) {
-                        textArea.append(bootSequence[index1])
+                            textArea.append(bootSequence[index1])
                         }
                         index1++
                         setTimeout(
@@ -74,41 +74,43 @@ const Splash = () => {
                                     window.scrollTo(0, document.body.scrollHeight);
                                     setTimeout(
                                         () => {
-                                            myRef1.current.style.minHeight='0px'
-                                            myRef1.current.style.background='transparent'
-                                            myRef1.current.style.borderRadius='16px'
-                                            myRef.current.style.opacity='0'
-                                            myRef1.current.style.backgroundImage='radial-gradient(white, transparent 180%)'
+                                            myRef1.current.style.minHeight = '0px'
+                                            myRef1.current.style.background = 'transparent'
+                                            myRef1.current.style.borderRadius = '16px'
+                                            myRef.current.style.opacity = '0'
+                                            myRef1.current.style.backgroundImage = 'radial-gradient(white, transparent 180%)'
                                             setTimeout(
                                                 () => {
-                                                    myRef1.current.style.transform='scaleY(0)'
+                                                    myRef1.current.style.transform = 'scaleY(0)'
+                                                    document.getElementsByClassName(styles.term__noise)[0].style.display = 'none'
                                                 }
                                                 , 200)
                                             setTimeout(
                                                 () => {
-                                                    myRef1.current.style.display='none'
+                                                    myRef1.current.style.display = 'none'
                                                 }
                                                 , 550)
-                                            
                                         }
                                         , 2000)
                                 }
                             }
                             , Math.floor(Math.random() * 220) + 50)
-                            window.scrollTo(0, document.body.scrollHeight);
+                        window.scrollTo(0, document.body.scrollHeight);
 
                     }
                 }
                 , Math.floor(Math.random() * 220) + 50)
         }
         typing()
-
     }, [])
 
     return (
-        <div ref={myRef1} className={styles.term__container}>
-            <pre ref={myRef} className={styles.term}>blaster4385@mainframe:~$ </pre>
-        </div>
+        <>
+            <div ref={myRef1} className={styles.term__container}>
+                <pre ref={myRef} className={styles.term}>blaster4385@mainframe:~$ </pre>
+            </div>
+            <div className={styles.term__noise}></div>
+        </>
     )
 }
 
