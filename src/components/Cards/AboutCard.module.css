@@ -1,124 +1,127 @@
 .card {
-    background-color: #fcf7e9;
-    border: 4px solid #333;
-    box-shadow: 5px 10px 0px black;
-    position: absolute;
-    top: 125px;
-    left: 60%;
-    margin: 40px;
-    padding: 20px;
-    z-index: 1;
-    visibility: hidden;
-    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out, all 0.3s ;
-    transform: scale(0);
+  background-color: #fcf7e9;
+  border: 4px solid #333;
+  box-shadow: 5px 10px 0px black;
+  position: absolute;
+  top: 125px;
+  left: 60%;
+  margin: 40px;
+  padding: 20px;
+  z-index: 1;
+  visibility: hidden;
+  transition:
+    visibility 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    all 0.3s;
+  transform: scale(0);
 }
 
 .card__open {
-    visibility: visible;
-    transform: scale(1);
+  visibility: visible;
+  transform: scale(1);
 }
 
 .card__maximise {
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    z-index: 10;
-
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .card__title {
-    background-color: #fcf7e9;
-    color: #333;
-    font-family: 'Rubik', sans-serif;
-    font-size: 3rem;
-    font-weight: 900;
-    text-align: center;
+  background-color: #fcf7e9;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
 }
 
 .card__content {
-    border-top: 4px solid #333;
-    margin: 10px;
-    color: #333;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding: 1rem;
-    text-align: justify;
+  border-top: 4px solid #333;
+  margin: 10px;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1rem;
+  text-align: justify;
 }
 
 .card__close__button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    background: none;
-    border: none;
-    color: #333;
-    font-family: 'Rubik', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 400;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 .card__maximise__button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    margin-right: 50px;
-    background: none;
-    border: none;
-    color: #333;
-    font-family: 'Rubik', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 400;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  margin-right: 50px;
+  background: none;
+  border: none;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 768px) {
-    .card {
-        left: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        bottom: 0;
-        z-index: 2000;
-    }
-    .card__title {
-        font-size: 2rem;
-    }
-    .card__content {
-        font-size: 1rem;
-    }
-    .card__close__button {
-        font-size: 1.5rem;
-    }
-    .card__maximise__button {
-        display: none;
-    }
+  .card {
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2000;
+  }
+  .card__title {
+    font-size: 2rem;
+  }
+  .card__content {
+    font-size: 1rem;
+  }
+  .card__close__button {
+    font-size: 1.5rem;
+  }
+  .card__maximise__button {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    .card {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        height: auto;
-        z-index: 2000;
-    }
-    .card__title {
-        font-size: 2rem;
-    }
-    .card__content {
-        font-size: 1rem;
-    }
-    .card__close__button {
-        font-size: 1.5rem;
-    }
-    .card__maximise__button {
-        display: none;
-    }
+  .card {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    z-index: 2000;
+  }
+  .card__title {
+    font-size: 2rem;
+  }
+  .card__content {
+    font-size: 1rem;
+  }
+  .card__close__button {
+    font-size: 1.5rem;
+  }
+  .card__maximise__button {
+    display: none;
+  }
 }
+

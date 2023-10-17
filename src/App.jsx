@@ -1,11 +1,10 @@
-import './App.css'
-import Home from './pages/Home/Home'
-import React, { useState } from 'react';
-import { Context, initialOpenArray } from './constants';
+import "./App.css";
+import Home from "./pages/Home/Home";
+import React, { useState } from "react";
+import { Context, initialOpenArray } from "./constants";
 
 function App() {
-
-  const [openArray, setOpenArray] = useState(initialOpenArray)
+  const [openArray, setOpenArray] = useState(initialOpenArray);
 
   return (
     <>
@@ -13,7 +12,7 @@ function App() {
         <Home />
       </Context.Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
