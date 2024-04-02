@@ -2,14 +2,18 @@ import React from "react";
 import styles from "./AboutCard.module.css";
 import { useContext, useState } from "react";
 import { Context } from "../../constants";
+import useDragger from "../../hooks/useDragger";
 
 const AboutCard = () => {
   const [maximise, setMaximise] = useState(false);
   const { openArray, setOpenArray } = useContext(Context);
   console.log(openArray.About);
+  
+  useDragger("about", setMaximise);
 
   return (
     <div
+      id="about"
       className={
         maximise
           ? openArray.About
@@ -55,4 +59,3 @@ const AboutCard = () => {
 };
 
 export default AboutCard;
-

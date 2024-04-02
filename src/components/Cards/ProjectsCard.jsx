@@ -2,10 +2,13 @@ import React from "react";
 import styles from "./ProjectsCard.module.css";
 import { useContext, useState } from "react";
 import { Context } from "../../constants";
+import useDragger from "../../hooks/useDragger";
 
-const ProjectsCard = ({ open, setOpen }) => {
+const ProjectsCard = () => {
   const [maximise, setMaximise] = useState(false);
   const { openArray, setOpenArray } = useContext(Context);
+
+  useDragger("projects", setMaximise);
 
   const data = [
     {
@@ -50,14 +53,15 @@ const ProjectsCard = ({ open, setOpen }) => {
 
   return (
     <div
+      id="projects"
       className={
         maximise
           ? openArray.Projects
             ? `${styles.card} ${styles.card__open} ${styles.card__maximise}`
             : `${styles.card} ${styles.card__maximise}`
           : openArray.Projects
-            ? `${styles.card} ${styles.card__open}`
-            : styles.card
+          ? `${styles.card} ${styles.card__open}`
+          : styles.card
       }
     >
       <button
@@ -81,7 +85,7 @@ const ProjectsCard = ({ open, setOpen }) => {
         <h1 className={styles.card__title}>Projects</h1>
       </div>
       {data.map((item) => (
-        <div className={styles.card__content}>
+        <div key={item.title} className={styles.card__content}>
           <h2>{item.title}</h2>
           <p>{item.description}</p>
           <div className={styles.card__button__container}>
@@ -113,4 +117,3 @@ const ProjectsCard = ({ open, setOpen }) => {
 };
 
 export default ProjectsCard;
-

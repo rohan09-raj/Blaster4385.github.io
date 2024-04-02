@@ -46,74 +46,66 @@ const Home = () => {
 
   return (
     <div className={styles.home__container}>
-      <div>
-        <div className={styles.navbar}>
-          <div className={styles.navbar__logo}>
-            <img
-              src="https://github.com/Blaster4385.png"
-              className={styles.profile__image}
-            />
-            <h1 className={styles.navbar__logo_heading}>Blaster4385</h1>
-          </div>
-          <div className={styles.navbar__links}>
-            <button
-              className={styles.hamburger__button}
-              onClick={handleHamburger}
-            >
-              &#9776;
-            </button>
-            <button className={styles.button} onClick={handleHomeOpen}>
-              Home
-            </button>
-            <button className={styles.button} onClick={handleOpen}>
-              About
-            </button>
-            <button className={styles.button} onClick={handleProjectsOpen}>
-              Projects
-            </button>
-            <button className={styles.button} onClick={handleContactOpen}>
-              Contact
-            </button>
-          </div>
+      <div className={styles.navbar}>
+        <div className={styles.navbar__logo}>
+          <img
+            src="https://github.com/Blaster4385.png"
+            className={styles.profile__image}
+          />
+          <h1 className={styles.navbar__logo_heading}>Blaster4385</h1>
         </div>
-        <div
-          className={`${styles.navbar__links__responsive} ${hamburgerMenu ? styles.navbar__links__responsive_active : null}`}
-        >
-          <button className={styles.mobile__button} onClick={handleHomeOpen}>
+        <div className={styles.navbar__links}>
+          <button
+            className={styles.hamburger__button}
+            onClick={handleHamburger}
+          >
+            &#9776;
+          </button>
+          <button className={styles.button} onClick={handleHomeOpen}>
             Home
           </button>
-          <hr className={styles.mobile__hr} />
-          <button className={styles.mobile__button} onClick={handleOpen}>
+          <button className={styles.button} onClick={handleOpen}>
             About
           </button>
-          <hr className={styles.mobile__hr} />
-          <button
-            className={styles.mobile__button}
-            onClick={handleProjectsOpen}
-          >
+          <button className={styles.button} onClick={handleProjectsOpen}>
             Projects
           </button>
-          <hr className={styles.mobile__hr} />
-          <button className={styles.mobile__button} onClick={handleContactOpen}>
+          <button className={styles.button} onClick={handleContactOpen}>
             Contact
           </button>
         </div>
       </div>
-      <div className={styles.home__background}>
-        <TitleCard
-          title="It's-a me Blaster4385"
-          subheading="Full time nerd, part time developer"
-        />
+      <div
+        className={`${styles.navbar__links__responsive} ${
+          hamburgerMenu ? styles.navbar__links__responsive_active : null
+        }`}
+      >
+        <button className={styles.mobile__button} onClick={handleHomeOpen}>
+          Home
+        </button>
+        <hr className={styles.mobile__hr} />
+        <button className={styles.mobile__button} onClick={handleOpen}>
+          About
+        </button>
+        <hr className={styles.mobile__hr} />
+        <button className={styles.mobile__button} onClick={handleProjectsOpen}>
+          Projects
+        </button>
+        <hr className={styles.mobile__hr} />
+        <button className={styles.mobile__button} onClick={handleContactOpen}>
+          Contact
+        </button>
       </div>
-      <div>
-        <AboutCard />
-        <ProjectsCard />
-        <ContactCard />
-      </div>
+      <TitleCard
+        title="It's-a me Blaster4385"
+        subheading="Full time nerd, part time developer"
+      />
+      <AboutCard />
+      <ProjectsCard />
+      <ContactCard />
       <Splash />
     </div>
   );
 };
 
 export default Home;
-

@@ -2,12 +2,9 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.home__background {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .navbar {
@@ -50,7 +47,7 @@
   position: absolute;
   top: 7rem;
   right: 1rem;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .button {
@@ -168,4 +165,3 @@ a {
     font-size: 1.5rem;
   }
 }
-
