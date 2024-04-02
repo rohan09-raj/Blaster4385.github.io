@@ -2,21 +2,25 @@ import React from "react";
 import styles from "./ContactCard.module.css";
 import { useContext, useState } from "react";
 import { Context } from "../../constants";
+import useDragger from "../../hooks/useDragger";
 
 const ContactCard = ({ open, setOpen }) => {
   const [maximise, setMaximise] = useState(false);
   const { openArray, setOpenArray } = useContext(Context);
 
+  useDragger("contact", setMaximise);
+
   return (
     <div
+      id="contact"
       className={
         maximise
           ? openArray.Contact
             ? `${styles.card} ${styles.card__open} ${styles.card__maximise}`
             : `${styles.card} ${styles.card__maximise}`
           : openArray.Contact
-            ? `${styles.card} ${styles.card__open}`
-            : styles.card
+          ? `${styles.card} ${styles.card__open}`
+          : styles.card
       }
     >
       <button
@@ -75,4 +79,3 @@ const ContactCard = ({ open, setOpen }) => {
 };
 
 export default ContactCard;
-
