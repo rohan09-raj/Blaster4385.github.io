@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./ProjectsCard.module.css";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Context } from "../../constants";
 import useDragger from "../../hooks/useDragger";
 
 const ProjectsCard = () => {
   const [maximise, setMaximise] = useState(false);
   const { openArray, setOpenArray } = useContext(Context);
+  const dragHandle = useRef();
 
-  useDragger("projects", setMaximise);
+  useDragger("projects", setMaximise, dragHandle);
 
   const data = [
     {
@@ -60,28 +61,28 @@ const ProjectsCard = () => {
             ? `${styles.card} ${styles.card__open} ${styles.card__maximise}`
             : `${styles.card} ${styles.card__maximise}`
           : openArray.Projects
-          ? `${styles.card} ${styles.card__open}`
-          : styles.card
+            ? `${styles.card} ${styles.card__open}`
+            : styles.card
       }
     >
-      <button
-        className={styles.card__close__button}
-        onClick={() =>
-          setOpenArray({
-            ...openArray,
-            Projects: !openArray.Projects,
-          })
-        }
-      >
-        &times;
-      </button>
-      <button
-        className={styles.card__maximise__button}
-        onClick={() => setMaximise(!maximise)}
-      >
-        &#x2610;
-      </button>
-      <div>
+      <div className={styles.card__header} ref={dragHandle}>
+        <button
+          className={styles.card__close__button}
+          onClick={() =>
+            setOpenArray({
+              ...openArray,
+              Projects: !openArray.Projects,
+            })
+          }
+        >
+          &times;
+        </button>
+        <button
+          className={styles.card__maximise__button}
+          onClick={() => setMaximise(!maximise)}
+        >
+          &#x2610;
+        </button>
         <h1 className={styles.card__title}>Projects</h1>
       </div>
       {data.map((item) => (

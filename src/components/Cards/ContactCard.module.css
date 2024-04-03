@@ -13,10 +13,17 @@
   transition:
     visibility 0.3s ease-in-out,
     transform 0.3s ease-in-out,
-    scale 0.3s, 
-    height 0.3s, 
+    scale 0.3s,
+    height 0.3s,
     width 0.3s;
   transform: scale(0);
+}
+
+.card__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .card__open {
@@ -136,4 +143,3 @@
     display: none;
   }
 }
-

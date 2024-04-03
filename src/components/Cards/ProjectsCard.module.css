@@ -13,13 +13,20 @@
   transition:
     visibility 0.3s ease-in-out,
     transform 0.3s ease-in-out,
-    scale 0.3s, 
-    height 0.3s, 
+    scale 0.3s,
+    height 0.3s,
     width 0.3s;
   transform: scale(0);
   overflow-y: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+}
+
+.card__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .card::-webkit-scrollbar {
@@ -189,4 +196,3 @@
     display: none;
   }
 }
-

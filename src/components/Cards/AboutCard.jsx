@@ -1,15 +1,16 @@
 import React from "react";
 import styles from "./AboutCard.module.css";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Context } from "../../constants";
 import useDragger from "../../hooks/useDragger";
 
 const AboutCard = () => {
   const [maximise, setMaximise] = useState(false);
   const { openArray, setOpenArray } = useContext(Context);
-  console.log(openArray.About);
-  
-  useDragger("about", setMaximise);
+
+  const dragHandle = useRef();
+
+  useDragger("about", setMaximise, dragHandle);
 
   return (
     <div
@@ -24,24 +25,24 @@ const AboutCard = () => {
             : styles.card
       }
     >
-      <button
-        className={styles.card__close__button}
-        onClick={() =>
-          setOpenArray({
-            ...openArray,
-            About: !openArray.About,
-          })
-        }
-      >
-        &times;
-      </button>
-      <button
-        className={styles.card__maximise__button}
-        onClick={() => setMaximise(!maximise)}
-      >
-        &#x2610;
-      </button>
-      <div>
+      <div className={styles.card__header} ref={dragHandle}>
+        <button
+          className={styles.card__close__button}
+          onClick={() =>
+            setOpenArray({
+              ...openArray,
+              About: !openArray.About,
+            })
+          }
+        >
+          &times;
+        </button>
+        <button
+          className={styles.card__maximise__button}
+          onClick={() => setMaximise(!maximise)}
+        >
+          &#x2610;
+        </button>
         <h1 className={styles.card__title}>About</h1>
       </div>
       <div className={styles.card__content}>
